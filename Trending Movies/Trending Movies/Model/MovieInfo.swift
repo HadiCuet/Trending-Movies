@@ -21,4 +21,5 @@ struct MovieResult: Decodable {
     }
     let title: String
     let overview: String
+    let release_date: String?
 }
