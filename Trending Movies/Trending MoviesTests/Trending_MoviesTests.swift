@@ -2,8 +2,6 @@
 //  Trending_MoviesTests.swift
 //  Trending MoviesTests
 //
-//  Created by Abdullah Al Hadi on 27/1/23.
-//
 
 import XCTest
 @testable import Trending_Movies

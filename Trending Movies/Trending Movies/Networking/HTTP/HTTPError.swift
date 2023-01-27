@@ -2,8 +2,6 @@
 //  HTTPError.swift
 //  Trending Movies
 //
-//  Created by Abdullah Al Hadi on 27/1/23.
-//
 
 public enum HTTPError: String, Error {
 

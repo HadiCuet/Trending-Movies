@@ -2,8 +2,6 @@
 //  Trending_MoviesUITestsLaunchTests.swift
 //  Trending MoviesUITests
 //
-//  Created by Abdullah Al Hadi on 27/1/23.
-//
 
 import XCTest
 
