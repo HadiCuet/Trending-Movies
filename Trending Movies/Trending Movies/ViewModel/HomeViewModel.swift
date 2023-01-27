@@ -11,11 +11,12 @@ protocol HomeViewModelProtocol {
 }
 
 class HomeViewModel: HomeViewModelProtocol {
-    var movieList: Bindable<[MovieResult]> = Bindable([])
+    var movieList: Bindable<[MovieResult]>
     private let clientService: MovieServiceProtocol
 
     init(clientService: MovieServiceProtocol) {
         self.clientService = clientService
+        self.movieList = Bindable([])
     }
 
     func getTrendingMovies() {
@@ -30,6 +31,7 @@ class HomeViewModel: HomeViewModelProtocol {
                 self.movieList.value = list.results
 
             case .failure(let error):
+                self.movieList.value = []
                 Log.error(error.localizedDescription)
             }
         }
