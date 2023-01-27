@@ -19,7 +19,7 @@ struct MovieResult: Decodable {
         }
         return nil
     }
-    let title: String
-    let overview: String
+    let title: String?
+    let overview: String?
     let release_date: String?
 }

@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     private let tableViewCellName = "MovieTableViewCell"
     private let vcTitle = "Top Trending Movies"
     let defaultImageName = "defaultPosterImage"
+    let detailVCId = "MovieDetailViewController"
     private var movieList = [MovieResult]()
 
     init?(coder: NSCoder, homeViewModel: HomeViewModel) {
@@ -78,6 +79,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.selectionStyle = .none
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: mainStoryboard, bundle: nil)
+        let detailViewController = storyboard.instantiateViewController(identifier: detailVCId, creator: { coder in
+            return MovieDetailViewController(coder: coder, data: self.movieList[indexPath.row])
+        })
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 

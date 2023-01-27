@@ -16,10 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         self.window = UIWindow(windowScene: windowScene)
-        let storyboardName = "Main"
         let rootVCId = "HomeViewController"
 
-        let mainStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let mainStoryboard = UIStoryboard(name: mainStoryboard, bundle: nil)
         let homeViewController = mainStoryboard.instantiateViewController(identifier: rootVCId, creator: { coder in
             let urlSession = URLSession(configuration: .default)
             let service = MovieClientService(urlSession: urlSession, serviceHelper: ClientServiceHelper())
