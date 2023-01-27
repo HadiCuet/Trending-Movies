@@ -17,6 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Item Found To Show." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjH-XN-Wnq">
+                                <rect key="frame" x="20" y="410" width="350" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="S5v-Fk-odp">
                                 <rect key="frame" x="0.0" y="91" width="390" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -27,13 +33,17 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S5v-Fk-odp" secondAttribute="trailing" id="3wQ-8t-A5r"/>
                             <constraint firstItem="S5v-Fk-odp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9g7-Yv-O0T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DjH-XN-Wnq" secondAttribute="trailing" constant="20" id="QRp-BX-oHC"/>
+                            <constraint firstItem="DjH-XN-Wnq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eoN-uj-n3R"/>
                             <constraint firstItem="S5v-Fk-odp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gYI-LI-bmV"/>
+                            <constraint firstItem="DjH-XN-Wnq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lGz-2E-Qdl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S5v-Fk-odp" secondAttribute="bottom" id="xT8-TA-YNO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W4g-T3-F8U"/>
                     <connections>
                         <outlet property="movieTableView" destination="S5v-Fk-odp" id="QS2-72-1uu"/>
+                        <outlet property="noItemLabel" destination="DjH-XN-Wnq" id="9Ux-NX-e7G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

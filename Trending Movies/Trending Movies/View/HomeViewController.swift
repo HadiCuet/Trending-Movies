@@ -8,13 +8,15 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
-
+    @IBOutlet weak var noItemLabel: UILabel!
+    
     private let viewModel: HomeViewModel
     private let tableViewCellName = "MovieTableViewCell"
     private let vcTitle = "Top Trending Movies"
-    let defaultImageName = "defaultPosterImage"
-    let detailVCId = "MovieDetailViewController"
+    private let defaultImageName = "defaultPosterImage"
+    private let detailVCId = "MovieDetailViewController"
     private var movieList = [MovieResult]()
+    private var spinner = UIActivityIndicatorView()
 
     init?(coder: NSCoder, homeViewModel: HomeViewModel) {
         self.viewModel = homeViewModel
@@ -31,6 +33,7 @@ class HomeViewController: UIViewController {
         self.setUpTableView()
         self.bindViewModelData()
         self.viewModel.getTrendingMovies()
+        self.showLoader()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -50,12 +53,40 @@ class HomeViewController: UIViewController {
         viewModel.movieList.bind { [weak self] list in
             DispatchQueue.main.async {
                 guard let `self` = self else {
+                    Log.error("Home view controller doesn't exist any more. return")
                     return
                 }
+                self.showTableView(flag: list.count > 0)
                 self.movieList = list
                 self.movieTableView.reloadData()
+                self.dismissLoader()
             }
         }
+    }
+
+    private func showTableView(flag: Bool) {
+        movieTableView.isHidden = !flag
+        noItemLabel.isHidden = flag
+    }
+
+    private func showLoader() {
+        let viewSize = view.frame.size
+        spinner = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: viewSize.width, height: viewSize.height))
+        spinner.backgroundColor = .black.withAlphaComponent(0.5)
+        spinner.layer.cornerRadius = 5.0
+        spinner.clipsToBounds = true
+        spinner.hidesWhenStopped = true
+        spinner.style = .large
+        spinner.color = .white
+        spinner.center = view.center
+        view.addSubview(spinner)
+        spinner.startAnimating()
+        view.isUserInteractionEnabled = false
+    }
+
+    private func dismissLoader() {
+        spinner.stopAnimating()
+        view.isUserInteractionEnabled = true
     }
 }
 
