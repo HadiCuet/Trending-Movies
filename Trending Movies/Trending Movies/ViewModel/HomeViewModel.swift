@@ -29,9 +29,7 @@ class HomeViewModel: HomeViewModelProtocol {
             }
             switch movieList {
             case .success(let list):
-                self.movieList.value = list.results.map({ (movie) -> MovieResult in
-                    return movie
-                })
+                self.movieList.value = list.results
 
             case .failure(let error):
                 Log.error(error.localizedDescription)

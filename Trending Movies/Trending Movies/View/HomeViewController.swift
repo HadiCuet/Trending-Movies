@@ -9,7 +9,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    let viewModel: HomeViewModel
+    @IBOutlet weak var movieTableView: UITableView!
+
+    private let viewModel: HomeViewModel
+    private let tableViewCellName = "MovieTableViewCell"
+    private let vcTitle = "Top Trending Movies"
+    private var movieList = [MovieResult]()
 
     init?(coder: NSCoder, homeViewModel: HomeViewModel) {
         self.viewModel = homeViewModel
@@ -22,7 +27,51 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = vcTitle
 
+        self.setUpTableView()
+        self.bindViewModelData()
+        self.viewModel.getTrendingMovies()
+    }
+
+    private func setUpTableView() {
+        movieTableView.delegate = self
+        movieTableView.dataSource = self
+        let tableCellNib = UINib(nibName: tableViewCellName, bundle: nil)
+        movieTableView.register(tableCellNib, forCellReuseIdentifier: tableViewCellName)
+    }
+
+    private func bindViewModelData() {
+        viewModel.movieList.bind { [weak self] list in
+            DispatchQueue.main.async {
+                guard let `self` = self else {
+                    return
+                }
+                self.movieList = list
+                self.movieTableView.reloadData()
+            }
+        }
+    }
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.movieList.count
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellObject = tableView.dequeueReusableCell(withIdentifier: tableViewCellName, for: indexPath)
+        guard let cell = cellObject as? MovieTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.movieTitleLabel.text = self.movieList[indexPath.row].title
+        cell.releaseYearLabel.text = self.movieList[indexPath.row].release_date
+        cell.selectionStyle = .none
+        return cell
     }
 }
 
