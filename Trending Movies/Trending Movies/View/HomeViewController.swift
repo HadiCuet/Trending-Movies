@@ -9,9 +9,20 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    let viewModel: HomeViewModel
+
+    init?(coder: NSCoder, homeViewModel: HomeViewModel) {
+        self.viewModel = homeViewModel
+        super.init(coder: coder)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("Failed to load view controller.")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
 }
 

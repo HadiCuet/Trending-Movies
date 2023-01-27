@@ -11,10 +11,15 @@ protocol MovieServiceProtocol {
     func getTrendingMovies(_ completion: @escaping (Result<MovieInfo>) -> ())
 }
 
-struct MovieClientService : MovieServiceProtocol {
+class MovieClientService: MovieServiceProtocol {
 
-    let session = URLSession(configuration: .default)
-    let serviceHelper = ClientServiceHelper()
+    let session : URLSession
+    let serviceHelper : ClientServiceHelper
+
+    init(urlSession: URLSession, serviceHelper: ClientServiceHelper) {
+        self.session = urlSession
+        self.serviceHelper = serviceHelper
+    }
 
     func getTrendingMovies(_ completion: @escaping (Result<MovieInfo>) -> ()) {
         let parameters = serviceHelper.getTrendingMoviesParams()
