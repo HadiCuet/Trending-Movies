@@ -9,7 +9,7 @@ import Foundation
 
 //MARK: URLs
 let baseURL: String = "https://api.themoviedb.org/"
-let baseImageUrl: String = "https://image.tmdb.org/t/p/original/"
+let baseImageUrl: String = "https://image.tmdb.org/"
 
 //MARK: API Key/Value
 let kApiKeyParam = "api_key"
