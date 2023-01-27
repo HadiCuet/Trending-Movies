@@ -16,11 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         self.window = UIWindow(windowScene: windowScene)
+        let storyboardName = "Main"
+        let rootVCId = "HomeViewController"
 
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let homeViewController = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else {
-            return
-        }
+        let mainStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let homeViewController = mainStoryboard.instantiateViewController(identifier: rootVCId, creator: { coder in
+            let urlSession = URLSession(configuration: .default)
+            let service = MovieClientService(urlSession: urlSession, serviceHelper: ClientServiceHelper())
+            return HomeViewController(coder: coder, homeViewModel: HomeViewModel(clientService: service))
+        })
         let navController = UINavigationController(rootViewController: homeViewController)
 
         self.window?.rootViewController = navController

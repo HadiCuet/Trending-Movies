@@ -12,13 +12,12 @@ protocol HomeViewModelProtocol {
     func getTrendingMovies()
 }
 
-class MovieViewModel: NSObject, HomeViewModelProtocol {
+class HomeViewModel: HomeViewModelProtocol {
     var movieList: Bindable<[MovieResult]> = Bindable([])
-    private var clientService: MovieClientService
+    private let clientService: MovieServiceProtocol
 
-    override init() {
-        self.clientService = MovieClientService()
-        super.init()
+    init(clientService: MovieServiceProtocol) {
+        self.clientService = clientService
     }
 
     func getTrendingMovies() {
