@@ -28,6 +28,8 @@
 		0F73CED929839EB600A404C8 /* ClientServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73CED829839EB600A404C8 /* ClientServiceHelper.swift */; };
 		0F73CEDB29839F2C00A404C8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73CEDA29839F2C00A404C8 /* Constants.swift */; };
 		0F73CEDD2983A1A900A404C8 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73CEDC2983A1A900A404C8 /* MovieInfo.swift */; };
+		0F73CEDF2983C3A600A404C8 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73CEDE2983C3A600A404C8 /* Bindable.swift */; };
+		0F73CEE12983C41C00A404C8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73CEE02983C41C00A404C8 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		0F73CED829839EB600A404C8 /* ClientServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientServiceHelper.swift; sourceTree = "<group>"; };
 		0F73CEDA29839F2C00A404C8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0F73CEDC2983A1A900A404C8 /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		0F73CEDE2983C3A600A404C8 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		0F73CEE02983C41C00A404C8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 			children = (
 				0F73CED029839DAA00A404C8 /* Log.swift */,
 				0F73CEDA29839F2C00A404C8 /* Constants.swift */,
+				0F73CEDE2983C3A600A404C8 /* Bindable.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 		0F73CEC1298398AC00A404C8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0F73CEE02983C41C00A404C8 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F73CEE12983C41C00A404C8 /* HomeViewModel.swift in Sources */,
 				0F73CED329839DD600A404C8 /* URLEncoder.swift in Sources */,
 				0F73CEDD2983A1A900A404C8 /* MovieInfo.swift in Sources */,
 				0F73CED929839EB600A404C8 /* ClientServiceHelper.swift in Sources */,
@@ -368,6 +375,7 @@
 				0F73CE9329838F3000A404C8 /* HomeViewController.swift in Sources */,
 				0F73CECB29839C4500A404C8 /* HTTPError.swift in Sources */,
 				0F73CE8F29838F3000A404C8 /* AppDelegate.swift in Sources */,
+				0F73CEDF2983C3A600A404C8 /* Bindable.swift in Sources */,
 				0F73CEC729839B2300A404C8 /* NetworkRoute.swift in Sources */,
 				0F73CEC929839BD700A404C8 /* HTTPMethod.swift in Sources */,
 				0F73CEDB29839F2C00A404C8 /* Constants.swift in Sources */,
