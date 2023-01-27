@@ -99,10 +99,13 @@
 		0F73CE8D29838F3000A404C8 /* Trending Movies */ = {
 			isa = PBXGroup;
 			children = (
+				0F73CEC2298398B500A404C8 /* View */,
+				0F73CEC1298398AC00A404C8 /* ViewModel */,
+				0F73CEC0298398A300A404C8 /* Model */,
+				0F73CEBF2983988D00A404C8 /* Networking */,
+				0F73CEBE2983987C00A404C8 /* Utility */,
 				0F73CE8E29838F3000A404C8 /* AppDelegate.swift */,
 				0F73CE9029838F3000A404C8 /* SceneDelegate.swift */,
-				0F73CE9229838F3000A404C8 /* HomeViewController.swift */,
-				0F73CE9429838F3000A404C8 /* Main.storyboard */,
 				0F73CE9729838F3000A404C8 /* Assets.xcassets */,
 				0F73CE9929838F3000A404C8 /* LaunchScreen.storyboard */,
 				0F73CE9C29838F3000A404C8 /* Info.plist */,
@@ -125,6 +128,43 @@
 				0F73CEB129838F3000A404C8 /* Trending_MoviesUITestsLaunchTests.swift */,
 			);
 			path = "Trending MoviesUITests";
+			sourceTree = "<group>";
+		};
+		0F73CEBE2983987C00A404C8 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		0F73CEBF2983988D00A404C8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		0F73CEC0298398A300A404C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0F73CEC1298398AC00A404C8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0F73CEC2298398B500A404C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0F73CE9429838F3000A404C8 /* Main.storyboard */,
+				0F73CE9229838F3000A404C8 /* HomeViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
