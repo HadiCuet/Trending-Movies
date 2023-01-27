@@ -27,6 +27,7 @@
 		0F73CED729839E6F00A404C8 /* MovieClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73CED629839E6F00A404C8 /* MovieClientService.swift */; };
 		0F73CED929839EB600A404C8 /* ClientServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73CED829839EB600A404C8 /* ClientServiceHelper.swift */; };
 		0F73CEDB29839F2C00A404C8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73CEDA29839F2C00A404C8 /* Constants.swift */; };
+		0F73CEDD2983A1A900A404C8 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73CEDC2983A1A900A404C8 /* MovieInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		0F73CED629839E6F00A404C8 /* MovieClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieClientService.swift; sourceTree = "<group>"; };
 		0F73CED829839EB600A404C8 /* ClientServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientServiceHelper.swift; sourceTree = "<group>"; };
 		0F73CEDA29839F2C00A404C8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0F73CEDC2983A1A900A404C8 /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		0F73CEC0298398A300A404C8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0F73CEDC2983A1A900A404C8 /* MovieInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F73CED329839DD600A404C8 /* URLEncoder.swift in Sources */,
+				0F73CEDD2983A1A900A404C8 /* MovieInfo.swift in Sources */,
 				0F73CED929839EB600A404C8 /* ClientServiceHelper.swift in Sources */,
 				0F73CECD29839CD600A404C8 /* NetworkRequest.swift in Sources */,
 				0F73CECF29839D4A00A404C8 /* NetworkResponse.swift in Sources */,
