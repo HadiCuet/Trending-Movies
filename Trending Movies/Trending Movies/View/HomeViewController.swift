@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     private let viewModel: HomeViewModel
     private let tableViewCellName = "MovieTableViewCell"
     private let vcTitle = "Top Trending Movies"
+    let defaultImageName = "defaultPosterImage"
     private var movieList = [MovieResult]()
 
     init?(coder: NSCoder, homeViewModel: HomeViewModel) {
@@ -68,8 +69,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = cellObject as? MovieTableViewCell else {
             return UITableViewCell()
         }
-        cell.movieTitleLabel.text = self.movieList[indexPath.row].title
-        cell.releaseYearLabel.text = self.movieList[indexPath.row].release_date
+        let movie = self.movieList[indexPath.row]
+        cell.movieTitleLabel.text = movie.title
+        cell.releaseYearLabel.text = movie.release_date
+        cell.posterImageView.image = UIImage(named: defaultImageName)
+        if let posterUrl = movie.posterUrl {
+            cell.posterImageView.loadImage(fromUrl: posterUrl)
+        }
         cell.selectionStyle = .none
         return cell
     }

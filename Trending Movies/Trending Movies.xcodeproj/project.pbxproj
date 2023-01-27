@@ -32,6 +32,7 @@
 		0F73CEE12983C41C00A404C8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73CEE02983C41C00A404C8 /* HomeViewModel.swift */; };
 		0F73CEE42983D13B00A404C8 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73CEE22983D13B00A404C8 /* MovieTableViewCell.swift */; };
 		0F73CEE52983D13B00A404C8 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F73CEE32983D13B00A404C8 /* MovieTableViewCell.xib */; };
+		0F73CEE82983D9C700A404C8 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73CEE72983D9C700A404C8 /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		0F73CEE02983C41C00A404C8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0F73CEE22983D13B00A404C8 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		0F73CEE32983D13B00A404C8 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
+		0F73CEE72983D9C700A404C8 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				0F73CEC0298398A300A404C8 /* Model */,
 				0F73CEBF2983988D00A404C8 /* Networking */,
 				0F73CEBE2983987C00A404C8 /* Utility */,
+				0F73CEE62983D9A500A404C8 /* Extensions */,
 				0F73CE8E29838F3000A404C8 /* AppDelegate.swift */,
 				0F73CE9029838F3000A404C8 /* SceneDelegate.swift */,
 				0F73CE9729838F3000A404C8 /* Assets.xcassets */,
@@ -237,6 +240,14 @@
 				0F73CED829839EB600A404C8 /* ClientServiceHelper.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		0F73CEE62983D9A500A404C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F73CEE72983D9C700A404C8 /* UIImageView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +387,7 @@
 				0F73CEE42983D13B00A404C8 /* MovieTableViewCell.swift in Sources */,
 				0F73CEDD2983A1A900A404C8 /* MovieInfo.swift in Sources */,
 				0F73CED929839EB600A404C8 /* ClientServiceHelper.swift in Sources */,
+				0F73CEE82983D9C700A404C8 /* UIImageView+Extensions.swift in Sources */,
 				0F73CECD29839CD600A404C8 /* NetworkRequest.swift in Sources */,
 				0F73CECF29839D4A00A404C8 /* NetworkResponse.swift in Sources */,
 				0F73CED729839E6F00A404C8 /* MovieClientService.swift in Sources */,
