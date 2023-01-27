@@ -20,4 +20,7 @@ struct MovieResult: Decodable {
     let title: String?
     let overview: String?
     let release_date: String?
+    var releaseYear: String {
+        release_date?.getYear(fromDateFormat: "yyyy-MM-dd") ?? ""
+    }
 }

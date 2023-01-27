@@ -27,11 +27,16 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = vcTitle
 
         self.setUpTableView()
         self.bindViewModelData()
         self.viewModel.getTrendingMovies()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.title = vcTitle
     }
 
     private func setUpTableView() {
@@ -70,7 +75,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let movie = self.movieList[indexPath.row]
         cell.movieTitleLabel.text = movie.title
-        cell.releaseYearLabel.text = movie.release_date
+        cell.releaseYearLabel.text = movie.releaseYear
         cell.posterImageView.image = UIImage(named: defaultImageName)
         if let posterUrl = movie.posterUrl {
             cell.posterImageView.loadImage(fromUrl: posterUrl)

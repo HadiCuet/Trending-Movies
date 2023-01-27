@@ -26,12 +26,14 @@ class MovieDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.title = ""
+        title = "Movie Details"
 
         if let imagerUrl = movieData.posterUrl {
             posterImageView.loadImage(fromUrl: imagerUrl)
         }
         movieTitleLabel.text = movieData.title
-        releaseDateLabel.text = movieData.release_date
+        releaseDateLabel.text = movieData.releaseYear
         movieDetailLabel.text = movieData.overview
     }
 
