@@ -2,8 +2,6 @@
 //  MovieDetailViewController.swift
 //  Trending Movies
 //
-//  Created by Abdullah Al Hadi on 27/1/23.
-//
 
 import UIKit
 
@@ -23,7 +21,7 @@ class MovieDetailViewController: UIViewController {
     }
 
     required init?(coder: NSCoder) {
-        fatalError("")
+        fatalError("Failed to load detail view controller.")
     }
 
     override func viewDidLoad() {

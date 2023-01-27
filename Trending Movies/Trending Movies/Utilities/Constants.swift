@@ -2,10 +2,8 @@
 //  Constants.swift
 //  Trending Movies
 //
-//  Created by Abdullah Al Hadi on 27/1/23.
-//
 
-import Foundation
+import UIKit
 
 //MARK: URLs
 let baseURL: String = "https://api.themoviedb.org/"
@@ -19,3 +17,6 @@ let timeOutInterval: TimeInterval = 20.0
 
 //MARK: View Constants
 let mainStoryboard = "Main"
+
+//MARK: Others
+let imageCache = NSCache<NSString, UIImage>()
